@@ -66,6 +66,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
+# Disable multithreaded dexopt by default
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.dalvik.multithread=false
+
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
@@ -140,10 +144,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     Trebuchet \
-    AudioFX \
+    DSPManager \
+    libcyanogen-dsp \
+    audio_effects.conf \
     CMWallpapers \
+    Apollo \
     CMFileManager \
-    Eleven \
     LockClock \
     CMUpdater \
     CMAccount \
@@ -221,9 +227,9 @@ endif
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
-PRODUCT_VERSION_MAJOR = BMFRL
+PRODUCT_VERSION_MAJOR = LMP5
 PRODUCT_VERSION_MINOR = 1.0.0
-PRODUCT_VERSION_MAINTENANCE = BMFRL
+PRODUCT_VERSION_MAINTENANCE = LMP5
 
 # Set CM_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
 
