@@ -1,7 +1,7 @@
 PRODUCT_BRAND ?= cyanogenmod
 
 SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.Nocturnal.superuser
 
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 # determine the smaller dimension
@@ -121,16 +121,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
-# SlothWalls
-PRODUCT_PACKAGES += \
-    SlothWalls
-
 # This is CM!
 PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
 # T-Mobile theme engine
 include vendor/cm/config/themes_common.mk
+
+# SlothWalls
+PRODUCT_PACKAGES += \
+    SlothWalls
 
 # Required CM packages
 PRODUCT_PACKAGES += \
